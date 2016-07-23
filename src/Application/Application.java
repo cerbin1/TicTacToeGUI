@@ -5,12 +5,8 @@ import java.awt.*;
 
 public class Application {
     public static void main(String[] args) {
-        JFrame window = new Window("Tic Tac Toe");
-        window.setSize(300, 300);
-
-
-        window.setLocationRelativeTo(null);
-
+        Window window = new Window("Tic Tac Toe");
+        window.init();
         window.setVisible(true);
     }
 
