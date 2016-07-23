@@ -3,6 +3,8 @@ package Application;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class Window extends JFrame {
     Window(String title) {
@@ -18,9 +20,8 @@ class Window extends JFrame {
             JButton button = new JButton();
             buttons[i] = button;
             add(button);
+            button.setName("" + i);
+            button.addActionListener(e -> System.out.println("click!"));
         }
     }
-
-
-
 }
