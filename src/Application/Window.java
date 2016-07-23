@@ -9,6 +9,7 @@ class Window extends JFrame {
     }
 
     public void setLocationToCenter() {
+
         setLocationRelativeTo(null);
     }
 }
