@@ -21,4 +21,8 @@ class Window extends JFrame {
         }
     }
 
+    void chujCiWpupe() {
+
+    }
+
 }
