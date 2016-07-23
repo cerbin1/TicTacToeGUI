@@ -20,8 +20,16 @@ class Window extends JFrame {
             JButton button = new JButton();
             buttons[i] = button;
             add(button);
-            button.setName("" + i);
-            button.addActionListener(e -> System.out.println("click!"));
+            button.setName("");
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent event) {
+                    System.out.println("click!");
+                    JButton button = (JButton) event.getSource();
+                    button.setName("x");
+                    button.setIcon(new ImageIcon("res\\x.jpg"));
+                }
+            });
         }
     }
 }
