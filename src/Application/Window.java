@@ -26,7 +26,6 @@ class Window extends JFrame {
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent event) {
-                    System.out.println("click!");
                     JButton button = (JButton) event.getSource();
                     if (button.getName().equals("")) {
                         button.setName(String.valueOf(previousChar));
