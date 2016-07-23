@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 class Window extends JFrame {
+    private char previousChar = 'x';
+
     Window(String title) {
         super(title);
     }
@@ -26,8 +28,15 @@ class Window extends JFrame {
                 public void actionPerformed(ActionEvent event) {
                     System.out.println("click!");
                     JButton button = (JButton) event.getSource();
-                    button.setName("x");
-                    button.setIcon(new ImageIcon("res\\x.jpg"));
+                    if (button.getName().equals("")) {
+                        button.setName(String.valueOf(previousChar));
+                        button.setIcon(new ImageIcon("res\\" + previousChar + ".jpg"));
+                        if (previousChar == 'o') {
+                            previousChar = 'x';
+                        } else {
+                            previousChar = 'o';
+                        }
+                    }
                 }
             });
         }
