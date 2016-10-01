@@ -33,7 +33,7 @@ class Window extends JFrame {
                         if (previousChar == 'o') {
                             previousChar = 'x';
                         } else {
-                            previousChar = 'o';
+                            previousChar = 'o';  //tescik
                         }
                     }
                 }
