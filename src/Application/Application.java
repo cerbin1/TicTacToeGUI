@@ -7,11 +7,11 @@ public class Application {
     private char previousChar = 'x';
     private JButton[] buttons;
 
-    Application(String title) {
+    private Application(String title) {
         createGameFrame(title);
     }
 
-    void createGameFrame(String title) {
+    private void createGameFrame(String title) {
         JFrame frame = new JFrame(title);
         frame.setSize(300, 300);
         frame.setLocationRelativeTo(null);
@@ -40,6 +40,6 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        EventQueue.invokeLater(() -> new Window("Tic Tac Toe"));
+        EventQueue.invokeLater(() -> new Application("Tic Tac Toe"));
     }
 }
