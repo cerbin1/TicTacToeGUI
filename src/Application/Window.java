@@ -3,8 +3,6 @@ package Application;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 class Window extends JFrame {
     private char previousChar = 'x';
@@ -13,7 +11,7 @@ class Window extends JFrame {
         super(title);
     }
 
-    void init() {
+    void initializeFrame() {
         setSize(300, 300);
         setLocationRelativeTo(null);
         setLayout(new GridLayout(3, 3));
@@ -23,21 +21,19 @@ class Window extends JFrame {
             buttons[i] = button;
             add(button);
             button.setName("");
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent event) {
-                    JButton button = (JButton) event.getSource();
-                    if (button.getName().equals("")) {
-                        button.setName(String.valueOf(previousChar));
-                        button.setIcon(new ImageIcon("res\\" + previousChar + ".jpg"));
-                        if (previousChar == 'o') {
-                            previousChar = 'x';
-                        } else {
-                            previousChar = 'o';
-                        }
+            button.addActionListener(event -> {
+                if (button.getText().equals("")) {
+                    button.setIcon(new ImageIcon("src\\images\\" + previousChar + ".jpg"));
+                    if (previousChar == 'o') {
+                        previousChar = 'x';
+                    } else {
+                        previousChar = 'o';
                     }
+                } else {
+                    System.out.println("pole zajete");
                 }
             });
         }
+        setVisible(true);
     }
 }
