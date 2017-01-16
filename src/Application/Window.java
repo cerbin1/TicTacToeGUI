@@ -6,7 +6,7 @@ import java.awt.*;
 
 class Window extends JFrame {
     private char previousChar = 'x';
-    JButton[] buttons;
+    private JButton[] buttons;
 
     Window(String title) {
         super(title);
