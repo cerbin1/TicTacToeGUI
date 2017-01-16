@@ -4,26 +4,28 @@ package Application;
 import javax.swing.*;
 import java.awt.*;
 
-class Window extends JFrame {
+class Window {
     private char previousChar = 'x';
     private JButton[] buttons;
 
     Window(String title) {
-        super(title);
+        createGameFrame(title);
     }
 
-    void initializeFrame() {
-        setSize(300, 300);
-        setLocationRelativeTo(null);
-        setLayout(new GridLayout(3, 3));
+    JFrame createGameFrame(String title) {
+        JFrame frame = new JFrame(title);
+        frame.setSize(300, 300);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(new GridLayout(3, 3));
         buttons = new JButton[9];
         for (int i = 0; i < 9; i++) {
             JButton button = new JButton();
             button.addActionListener(event -> createActionListener(button));
             buttons[i] = button;
-            add(button);
+            frame.add(button);
         }
-        setVisible(true);
+        frame.setVisible(true);
+        return frame;
     }
 
     private void createActionListener(JButton button) {
