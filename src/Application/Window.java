@@ -22,7 +22,7 @@ class Window extends JFrame {
             JButton button = new JButton();
             buttons[i] = button;
             add(button);
-            button.setName("");//ff
+            button.setName("");
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent event) {
