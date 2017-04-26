@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Application {
-    private char previousChar = 'x';
+    private String previousChar = "x";
     private JButton[] buttons;
 
     private Application(String title) {
@@ -27,17 +27,18 @@ public class Application {
     }
 
     private void createActionListener(JButton button) {
-        if (button.getText().equals("")) {
-            button.setIcon(new ImageIcon("src\\images\\" + previousChar + ".jpg"));
-            if (previousChar == 'o') {
-                previousChar = 'x';
+        if (button.getText().isEmpty()) {
+            button.setText(previousChar);
+            if (previousChar.equals("o")) {
+                previousChar = "x";
             } else {
-                previousChar = 'o';
+                previousChar = "o";
             }
         } else {
             System.out.println("Pole zajete");
         }
     }
+
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> new Application("Tic Tac Toe"));
