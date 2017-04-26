@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Application {
-    private String previousChar = "x";
+    private String previousPlayer = "x";
     private JButton[] buttons;
 
     private Application(String title) {
@@ -28,17 +28,22 @@ public class Application {
 
     private void createActionListener(JButton button) {
         if (button.getText().isEmpty()) {
-            button.setText(previousChar);
-            if (previousChar.equals("o")) {
-                previousChar = "x";
+            button.setText(previousPlayer);
+            if (previousPlayer.equals("o")) {
+                previousPlayer = "x";
             } else {
-                previousChar = "o";
+                previousPlayer = "o";
             }
+            checkIfSomeoneWins("x");
         } else {
             System.out.println("Pole zajete");
         }
     }
 
+    private void checkIfSomeoneWins(String player) {
+        if (buttons[0].getText().equals(player)) {
+        }
+    }
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> new Application("Tic Tac Toe"));
